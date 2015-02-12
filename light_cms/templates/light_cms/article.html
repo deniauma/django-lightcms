@@ -1,2 +1,32 @@
-<h1>{{ article }}</h1>
-<p>{{ article.article_content }}</p>
+<!DOCTYPE HTML>
+<html>
+
+<head>
+        <title>{{ article }}</title>
+        <meta charset="utf-8">
+        <meta name="description" content="165c. uniques">
+</head>
+
+<body>
+    <div id="page">
+    <!-- DIV : Aucun sens sémantique - zone géographique -->
+    
+        <header>{{ article }}</header>
+        <nav><!-- Nav. principale de la page -> site --></nav>       
+        <article>{{ article.article_content }}</article>
+        <aside>
+			<section>
+				<h2>Informations</h2>
+			</section>
+			<section>
+				<h2>Partenaires</h2>
+			</section>
+			<section>
+				<h2>Suivez-moi</h2>
+			</section>
+        </aside>
+        <footer><p><small>&copy; Copyright Eric Deniaud 2015. All Rights Reserved.</small></p></footer>
+        
+    </div>
+</body>
+</html>
