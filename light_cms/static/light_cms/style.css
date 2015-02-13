@@ -1,7 +1,14 @@
 /* Personnal styles */
-.wrapper {
+body {
+	background: #f1f1f1;
+}
+
+div.wrapper {
 	width: 916px;
 	margin: 0 auto;
+	background: #fff;
+	padding: 20px 0 0 0;
+	overflow: hidden;
 }
 
 header {
@@ -31,4 +38,7 @@ footer {
 }
 #main_menu a {
 	display: block;
+}
+ul {
+	list-style: none;
 }
