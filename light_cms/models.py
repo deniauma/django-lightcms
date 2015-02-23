@@ -12,7 +12,7 @@ class Article(models.Model):
         return self.article_title
     def get_content(self):
         return self.article_content
-    def __str__(self):
+    def __unicode__(self):
         return self.article_title
     def save(self, *args, **kwargs):
         self.article_slug = slugify(self.article_title)
@@ -23,32 +23,32 @@ class Calendar(models.Model):
     end_date = models.DateField()
     calendar_title = models.CharField(max_length=200)
 
-    def __str__(self):
+    def __unicode__(self):
         return self.calendar_title
 
 class OpeningHours(models.Model):
     calendar = models.ForeignKey(Calendar)
     is_monday_opened = models.BooleanField(default=False)
-    monday_start = models.TimeField()
-    monday_end = models.TimeField()
+    monday_start = models.TimeField(null=True, blank=True)
+    monday_end = models.TimeField(null=True, blank=True)
     is_tuesday_opened = models.BooleanField(default=False)
-    tuesday_start = models.TimeField()
-    tuesday_end = models.TimeField()
+    tuesday_start = models.TimeField(null=True, blank=True)
+    tuesday_end = models.TimeField(null=True, blank=True)
     is_wednesday_opened = models.BooleanField(default=False)
-    wednesday_start = models.TimeField()
-    wednesday_end = models.TimeField()
+    wednesday_start = models.TimeField(null=True, blank=True)
+    wednesday_end = models.TimeField(null=True, blank=True)
     is_thursday_opened = models.BooleanField(default=False)
-    thursday_start = models.TimeField()
-    thursday_end = models.TimeField()
+    thursday_start = models.TimeField(null=True, blank=True)
+    thursday_end = models.TimeField(null=True, blank=True)
     is_friday_opened = models.BooleanField(default=False)
-    friday_start = models.TimeField()
-    friday_end = models.TimeField()
+    friday_start = models.TimeField(null=True, blank=True)
+    friday_end = models.TimeField(null=True, blank=True)
     is_saturday_opened = models.BooleanField(default=False)
-    saturday_start = models.TimeField()
-    saturday_end = models.TimeField()
+    saturday_start = models.TimeField(null=True, blank=True)
+    saturday_end = models.TimeField(null=True, blank=True)
     is_sunday_opened = models.BooleanField(default=False)
-    sunday_start = models.TimeField()
-    sunday_end = models.TimeField()
+    sunday_start = models.TimeField(null=True, blank=True)
+    sunday_end = models.TimeField(null=True, blank=True)
 
 class Unavailabilities(models.Model):
     calendar = models.ForeignKey(Calendar)
