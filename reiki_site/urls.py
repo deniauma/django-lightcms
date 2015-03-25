@@ -7,5 +7,5 @@ urlpatterns = patterns('',
     # url(r'^blog/', include('blog.urls')),
 
     url(r'^admin/', include(admin.site.urls)),
-    url(r'^pages/', include('light_cms.urls', namespace="light_cms")),
+    url(r'^', include('light_cms.urls', namespace="light_cms")),
 )
