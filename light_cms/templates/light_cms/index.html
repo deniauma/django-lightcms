@@ -29,7 +29,14 @@
 	
 	<link rel="stylesheet" href="{% static 'light_cms/style.css' %}" />
     <script src="{% static 'light_cms/jquery.min.js' %}"></script>
-	
+	{% if article.is_calendar_needed %}
+        <link rel="stylesheet" href="{% static 'light_cms/fullcalendar/fullcalendar.css' %}" />
+        <link rel="stylesheet" media='print' href="{% static 'light_cms/fullcalendar/fullcalendar.print.css' %}" />
+        <script src="{% static 'light_cms/fullcalendar/moment.min.js' %}"></script>
+        <script src="{% static 'light_cms/jquery.min.js' %}"></script>
+        <script src="{% static 'light_cms/fullcalendar/fullcalendar.min.js' %}"></script>
+        <script src="{% static 'light_cms/fullcalendar/lang/fr.js' %}"></script>
+    {% endif %}
 	<!-- Application-specific meta tags -->
 	<!-- Windows 8: see http://msdn.microsoft.com/en-us/library/ie/dn255024%28v=vs.85%29.aspx for details -->
 	<meta name="application-name" content="" /> 
