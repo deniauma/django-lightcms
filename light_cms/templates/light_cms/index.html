@@ -28,6 +28,7 @@
 	<!-- concatenate and minify for production -->
 	
 	<link rel="stylesheet" href="{% static 'light_cms/style.css' %}" />
+    <script src="{% static 'light_cms/jquery.min.js' %}"></script>
 	
 	<!-- Application-specific meta tags -->
 	<!-- Windows 8: see http://msdn.microsoft.com/en-us/library/ie/dn255024%28v=vs.85%29.aspx for details -->
@@ -63,18 +64,12 @@
 		</nav>
 	</header>
 	<article>	
-		<h1>Article Header</h1>
-		<p>Etiam pretium odio eu mi convallis vitae varius neque pharetra. Nulla vestibulum nisi ut sem cursus sed mattis nisi egestas.</p>
-		<h2>Article Subhead</h2>
-		<p>Vestibulum lacus erat, volutpat vel dignissim at, fringilla ut felis.</p>
-
-        {% load scheduleCalendar %}
-
-        <div id="calendar">
-          {% schedule_calendar 2015 03 %}
-        </div>
-
-	</article>
+		<h1>{{ article }}</h1>
+		<p>{{ article.article_content }}</p>
+        {% if article.is_calendar_needed %}
+            {% include "light_cms/calendar.html" %}
+        {% endif %}
+    </article>
 	<aside>
 		<h2>Sidebar Content</h2>
 	</aside>
